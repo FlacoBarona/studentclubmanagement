@@ -11,18 +11,14 @@
     ],
     "routes": [
       {
-        "src": "/(.*)",
-        "dest": "/index.html",
-        "headers": {
-          "Content-Type": "text/html; charset=UTF-8"
-        }
+        "src": "/(.+\\.js)",
+        "headers": { "Content-Type": "text/javascript" },
+        "dest": "/dist/frontend_app/browser/$1"
       },
       {
-        "src": "/(.*\\.js)",
-        "dest": "/dist/frontend_app/browser$1",
-        "headers": {
-          "Content-Type": "application/javascript"
-        }
+        "src": "/(.*)",
+        "headers": { "Cache-Control": "public, max-age=0, must-revalidate" },
+        "dest": "/dist/frontend_app/browser/index.html"
       }
     ]
   }

@@ -10,7 +10,20 @@
       }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "/index.html" }
+      {
+        "src": "/(.*)",
+        "dest": "/index.html",
+        "headers": {
+          "Content-Type": "text/html; charset=UTF-8"
+        }
+      },
+      {
+        "src": "/(.*\\.js)",
+        "dest": "/dist/frontend_app/browser$1",
+        "headers": {
+          "Content-Type": "application/javascript"
+        }
+      }
     ]
   }
   
